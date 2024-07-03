@@ -1,0 +1,4 @@
+button, ::part(button) {
+  background-color: RoyalBlue;
+  border-color: RoyalBlue;
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang=en-ca>
+<meta charset=utf-8>
+<meta name=viewport content=width=device-width,initial-scale=1>
+<meta name=color-scheme content="dark light">
+<title>Shatter</title>
+<base href=/shatter/>
+
+<link rel=stylesheet href=main.css>
+<link rel=stylesheet href=index.css>
+<link rel=stylesheet href=form.css>
+<link rel=stylesheet href=button.css>
+<link rel=modulepreload href=utils.js>
+<link rel=modulepreload href=preferences-form-element.js>
+<script type="module" blocking=render>
+import { PreferencesFormElement } from "./preferences-form-element.js";
+
+customElements.define("preferences-form", PreferencesFormElement);
+</script>
+
+<h1>Hello, World!</h1>
+
+<preferences-form>
+  <form>
+    <button>Save</button>
+  </form>
+</preferences-form>

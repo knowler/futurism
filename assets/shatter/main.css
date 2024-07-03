@@ -1,0 +1,12 @@
+@layer reset, elements, components, utilities;
+
+@layer reset {
+  :root {
+    font-family: system-ui;
+    font-feature-settings: "ss06";
+  }
+
+  *, ::before, ::after {
+    box-sizing: border-box;
+  } 
+}

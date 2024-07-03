@@ -1,0 +1,8 @@
+@layer elements {
+  @scope (form) {
+    button {
+      font-size: 1.5rem;
+      border-radius: 0;
+    }
+  }
+}

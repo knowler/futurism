@@ -1,0 +1,14 @@
+@layer elements {
+  @scope (button) {
+    /* This feels wrong. I think a better sorting order might be to add an additional layer for elements? */
+    :where(:scope) {
+      font-size: inherit;
+      font-family: system-ui;
+      font-weight: 600;
+      background-color: CanvasText;
+      border: 0.125em solid CanvasText;
+      border-radius: 0.5rem;
+      color: Canvas;
+    }
+  }
+}
