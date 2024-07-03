@@ -1,7 +1,14 @@
 import { css, html } from "./utils.js";
+import { BaseElement } from "./base-element.js";
 
-export class PreferencesFormElement extends HTMLElement {
-  static template = html`
+export class PreferencesFormElement extends BaseElement {
+  static styles = css`
+    :host {
+      display: block;
+    }
+  `;
+
+  static content = html`
     <link rel=stylesheet href=button.css>
     <link rel=stylesheet href=form.css>
     <form>
@@ -12,8 +19,17 @@ export class PreferencesFormElement extends HTMLElement {
   constructor() {
     super();
 
-    this.attachShadow({ mode: "open" });
+    this.shadowRoot.addEventListener("submit", this);
+    this.shadowRoot.addEventListener("click", this);
+  }
 
-    this.shadowRoot.append(PreferencesFormElement.template.content.cloneNode(true))
+  handleEvent(event) {
+    switch (event.type) {
+      case "submit":
+        event.preventDefault();
+      case "click":
+        console.log(event);
+        break;
+    }
   }
 }

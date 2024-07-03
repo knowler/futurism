@@ -1,12 +1,12 @@
 export function html() {
   const template = document.createElement("template");
   template.setHTMLUnsafe(identity(...arguments));
-  return template;
+  return template.content;
 }
 
-export async function css() {
+export function css() {
   const sheet = new CSSStyleSheet();
-  await sheet.replace(identity(...arguments));
+  sheet.replaceSync(identity(...arguments));
   return sheet;
 }
 
